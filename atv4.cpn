@@ -56,7 +56,7 @@
       </block>
     </globbox>
     <page id="ID6">
-      <pageattr name="New Page"/>
+      <pageattr name="ATV4"/>
       <constraints/>
       <Aux id="ID1412323390">
         <posattr x="-672.000000"
@@ -134,8 +134,6 @@ addLists([],[4,5,6]);
 addLists([1,2,3],[]);
 addLists([1,2,3],[4,5,6]);
 addLists([],[]);
-
-(* INCOMPLETO!!!!*)
 </text>
       </Aux>
       <Aux id="ID1412339498">
@@ -450,12 +448,12 @@ lastElem([10,20,30,40]);</text>
       <cpnbinder id="ID1412324322"
                  x="158"
                  y="79"
-                 width="958"
-                 height="791">
+                 width="1452"
+                 height="794">
         <sheets>
           <cpnsheet id="ID2215"
-                    panx="-395.000000"
-                    pany="-2.000000"
+                    panx="91.000000"
+                    pany="25.000000"
                     zoom="1.000000"
                     instance="ID2149">
             <zorder>
