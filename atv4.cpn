@@ -112,6 +112,63 @@ addItemList([10,20,30,40,50,60],7,100);
 addItemList([10,20,30,40,50,60],0,100);
 addItemList([],3,100);</text>
       </Aux>
+      <Aux id="ID1412335020">
+        <posattr x="84.000000"
+                 y="315.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <label/>
+        <text>(* Q.3 Somar duas listas*)
+
+fun addLists([], l2) = []
+| addLists(l1,[]) = []
+| addLists(l1,l2) = [hd l1 + hd l2]^^(addLists(tl l1, tl l2));
+
+addLists([],[4,5,6]);
+addLists([1,2,3],[]);
+addLists([1,2,3],[4,5,6]);
+addLists([],[]);
+
+(* INCOMPLETO!!!!*)
+</text>
+      </Aux>
+      <Aux id="ID1412339498">
+        <posattr x="84.000000"
+                 y="-42.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <label/>
+        <text>(* Q.4 Ultimo elemento da lista *)
+
+fun lastElem([]) = []
+| lastElem(l)=
+let
+    val t = tl l
+    val h = hd l
+in
+    if t = []
+    then [hd l]
+    else lastElem(t)
+end;
+
+lastElem([]);
+lastElem([10]);
+lastElem([10,20]);
+lastElem([10,20,30]);
+lastElem([10,20,30,40]);</text>
+      </Aux>
     </page>
     <instances>
       <instance id="ID2149"
@@ -397,8 +454,8 @@ addItemList([],3,100);</text>
                  height="791">
         <sheets>
           <cpnsheet id="ID2215"
-                    panx="230.000000"
-                    pany="20.000000"
+                    panx="-395.000000"
+                    pany="-2.000000"
                     zoom="1.000000"
                     instance="ID2149">
             <zorder>
