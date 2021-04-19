@@ -76,18 +76,13 @@
 
 fun sublists([],pos1,pos2) =  []
 | sublists(l, pos1, pos2) =
-let
-    val h = hd l
-    val t =tl l
-in
     if pos1 &gt; pos2
     then []
     else if pos1 &gt; 1
-    then sublists(t, pos1-1, pos2-1)
+    then sublists(tl l, pos1-1, pos2-1)
     else if pos1 = 1 andalso pos2 &gt; 1
-    then [h]^^sublists(t, pos1, pos2-1)
-    else [h]
-end;
+    then [hd l]^^sublists(tl l, pos1, pos2-1)
+    else [hd l];
 
 sublists([10,20,30,40,50,60],2,4);
 sublists([10,20],1,2);
@@ -107,18 +102,11 @@ sublists([10,20,30,40,50,60],4,2);</text>
         <label/>
         <text>(* Q.3 Inserir elemento em lista ordenada crescente*)
 
-fun verifyDuplicate(l) = hd l;
-
 fun insertElem([], item) = [item]
 | insertElem(l, item) =
-let
-    val h = hd l
-    val t = tl l
-in
-    if item&lt; h
-    then [item]^^[h]^^t
-    else [h]^^(insertElem(t, item))
-end;
+    if item&lt; hd l
+    then [item]^^[hd l]^^tl l
+    else [hd l]^^(insertElem(tl l, item));
 
 insertElem([10,20,30,40,50],55);
 insertElem([10,20,30,40,50],0);
@@ -151,6 +139,7 @@ fun createPckts(txt:string, len:int, count:int) =
     else [];
  
 fun newPckts(&quot;&quot;:string, length:int) = []
+| newPckts(text:string, 0) = []
 | newPckts(text:string, length:int) =
 createPckts(text, length, 0);   
 
@@ -158,7 +147,7 @@ createPckts(text, length, 0);
 newPckts(&quot;abcdef&quot;,2);
 newPckts(&quot;&quot;,3);
 newPckts(&quot;a&quot;,1);
-</text>
+newPckts(&quot;aaaaa&quot;,0);</text>
       </Aux>
       <Aux id="ID1412365625">
         <posattr x="126.000000"
@@ -175,17 +164,12 @@ newPckts(&quot;a&quot;,1);
         <text>(* Q.5 - Intercalar duas listas l1 e l2, comecando por l1*)
 
 
-fun interpolate12([], l2) = l2
-| interpolate12(l1, []) = l1
-| interpolate12(l1, l2) =
-let
-    val h1 = hd l1
-    val t1 = tl l1
-in
-    [h1]^^interpolate12(l2, t1)
-end;
+fun interpolate([], l2) = l2
+| interpolate(l1, []) = l1
+| interpolate(l1, l2) =
+  [hd l1]^^interpolate(l2, tl l1);
 
-interpolate12([1,3,5,7],[2,4,6,8,10]);</text>
+interpolate([1,3,5,7],[2,4,6,8]);</text>
       </Aux>
     </page>
     <instances>
@@ -466,14 +450,14 @@ interpolate12([1,3,5,7],[2,4,6,8,10]);</text>
     </options>
     <binders>
       <cpnbinder id="ID2222"
-                 x="156"
-                 y="105"
-                 width="1696"
-                 height="832">
+                 x="237"
+                 y="114"
+                 width="1582"
+                 height="843">
         <sheets>
           <cpnsheet id="ID2215"
-                    panx="424.000000"
-                    pany="310.000000"
+                    panx="-16.000000"
+                    pany="-62.000000"
                     zoom="1.000000"
                     instance="ID2149">
             <zorder>
@@ -562,9 +546,7 @@ interpolate12([1,3,5,7],[2,4,6,8,10]);</text>
           <IndexNode expanded="false"/>
         </IndexNode>
       </IndexNode>
-      <IndexNode expanded="false">
-        <IndexNode expanded="false"/>
-      </IndexNode>
+      <IndexNode expanded="false"/>
       <IndexNode expanded="false">
         <IndexNode expanded="false">
           <IndexNode expanded="true"/>
